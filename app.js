@@ -1,4 +1,5 @@
 // app.js
+require('dotenv').config()
 
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -8,7 +9,7 @@ var app = express();
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
-var dev_db_url = 'mongodb://rileyscotch:Galvanize13!@ds257470.mlab.com:57470/galvanizespecials';
+var dev_db_url = 'mongodb://127.0.0.1:27017/galvanizespecials';
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
