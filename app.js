@@ -3,6 +3,7 @@ require('dotenv').config()
 
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var product = require('./routes/product'); // Imports routes for the products
 var app = express();
@@ -19,6 +20,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/products', product);
+app.use(cors());
 
 var port = 3013;
 
